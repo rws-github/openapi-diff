@@ -24,14 +24,14 @@ public class OperationDiff {
     ChangedOperation changedOperation =
         new ChangedOperation(context.getUrl(), context.getMethod(), oldOperation, newOperation);
 
-    openApiDiff
-        .getMetadataDiff()
-        .diff(oldOperation.getSummary(), newOperation.getSummary(), context)
-        .ifPresent(changedOperation::setSummary);
-    openApiDiff
-        .getMetadataDiff()
-        .diff(oldOperation.getDescription(), newOperation.getDescription(), context)
-        .ifPresent(changedOperation::setDescription);
+    // openApiDiff
+    //     .getMetadataDiff()
+    //     .diff(oldOperation.getSummary(), newOperation.getSummary(), context)
+    //     .ifPresent(changedOperation::setSummary);
+    // openApiDiff
+    //     .getMetadataDiff()
+    //     .diff(oldOperation.getDescription(), newOperation.getDescription(), context)
+    //     .ifPresent(changedOperation::setDescription);
     changedOperation.setDeprecated(
         !Boolean.TRUE.equals(oldOperation.getDeprecated())
             && Boolean.TRUE.equals(newOperation.getDeprecated()));
