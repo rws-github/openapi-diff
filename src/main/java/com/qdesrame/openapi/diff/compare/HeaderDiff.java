@@ -49,10 +49,10 @@ public class HeaderDiff extends ReferenceDiffCache<Header, ChangedHeader> {
                     && Boolean.TRUE.equals(right.getDeprecated()))
             .setStyle(!Objects.equals(left.getStyle(), right.getStyle()))
             .setExplode(getBooleanDiff(left.getExplode(), right.getExplode()));
-    openApiDiff
-        .getMetadataDiff()
-        .diff(left.getDescription(), right.getDescription(), context)
-        .ifPresent(changedHeader::setDescription);
+    // openApiDiff
+    //     .getMetadataDiff()
+    //     .diff(left.getDescription(), right.getDescription(), context)
+    //     .ifPresent(changedHeader::setDescription);
     openApiDiff
         .getSchemaDiff()
         .diff(new HashSet<>(), left.getSchema(), right.getSchema(), context.copyWithRequired(true))

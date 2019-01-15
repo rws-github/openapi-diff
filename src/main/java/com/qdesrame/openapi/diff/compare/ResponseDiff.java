@@ -41,10 +41,10 @@ public class ResponseDiff extends ReferenceDiffCache<ApiResponse, ChangedRespons
     right = refPointer.resolveRef(rightComponents, right, right.get$ref());
 
     ChangedResponse changedResponse = new ChangedResponse(left, right, context);
-    openApiDiff
-        .getMetadataDiff()
-        .diff(left.getDescription(), right.getDescription(), context)
-        .ifPresent(changedResponse::setDescription);
+    // openApiDiff
+    //     .getMetadataDiff()
+    //     .diff(left.getDescription(), right.getDescription(), context)
+    //     .ifPresent(changedResponse::setDescription);
     openApiDiff
         .getContentDiff()
         .diff(left.getContent(), right.getContent(), context)

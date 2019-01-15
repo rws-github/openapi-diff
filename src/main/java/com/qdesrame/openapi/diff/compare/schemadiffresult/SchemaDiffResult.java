@@ -60,10 +60,10 @@ public class SchemaDiffResult {
         .getExtensionsDiff()
         .diff(left.getExtensions(), right.getExtensions())
         .ifPresent(changedSchema::setExtensions);
-    openApiDiff
-        .getMetadataDiff()
-        .diff(left.getDescription(), right.getDescription(), context)
-        .ifPresent(changedSchema::setDescription);
+    // openApiDiff
+    //     .getMetadataDiff()
+    //     .diff(left.getDescription(), right.getDescription(), context)
+    //     .ifPresent(changedSchema::setDescription);
 
     Map<String, Schema> leftProperties = null == left ? null : left.getProperties();
     Map<String, Schema> rightProperties = null == right ? null : right.getProperties();

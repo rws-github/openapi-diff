@@ -64,13 +64,13 @@ public class RequestBodyDiff extends ReferenceDiffCache<RequestBody, ChangedRequ
     ChangedRequestBody changedRequestBody =
         new ChangedRequestBody(oldRequestBody, newRequestBody, context)
             .setChangeRequired(leftRequired != rightRequired);
-    openApiDiff
-        .getMetadataDiff()
-        .diff(
-            oldRequestBody != null ? oldRequestBody.getDescription() : null,
-            newRequestBody != null ? newRequestBody.getDescription() : null,
-            context)
-        .ifPresent(changedRequestBody::setDescription);
+    // openApiDiff
+    //     .getMetadataDiff()
+    //     .diff(
+    //         oldRequestBody != null ? oldRequestBody.getDescription() : null,
+    //         newRequestBody != null ? newRequestBody.getDescription() : null,
+    //         context)
+    //     .ifPresent(changedRequestBody::setDescription);
     openApiDiff
         .getContentDiff()
         .diff(oldRequestContent, newRequestContent, context)
